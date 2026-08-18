@@ -40,6 +40,8 @@ const sendSMS = async (to, messageBody) => {
     console.log(`[Twilio SMS Simulation] To: ${to} | Message: "${messageBody}"`);
     return { success: true, simulated: true };
   }
+};
+
 /**
  * Send WhatsApp notification to user via Twilio
  * @param {string} to - Recipient phone number (without whatsapp: prefix)
