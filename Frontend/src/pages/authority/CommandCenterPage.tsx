@@ -33,13 +33,13 @@ export const CommandCenterPage: React.FC = () => {
   return (
     <div>
       {/* Top Header Information */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-        <div>
-          <h1 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 800, fontSize: '1.6rem', color: '#ffffff' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ minWidth: 0 }}>
+          <h1 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 800, fontSize: 'clamp(1rem, 3vw, 1.6rem)', color: '#ffffff', lineHeight: 1.2 }}>
             Unified Pilgrimage Command Dashboard
           </h1>
-          <p style={{ fontSize: '0.85rem', color: '#9d98a8' }}>
-            Somnath & Jagat Mandir Zone Surveillance • Real-Time AI Computer Vision Tracking
+          <p style={{ fontSize: 'clamp(0.7rem, 2vw, 0.85rem)', color: '#9d98a8', marginTop: '0.25rem' }}>
+            Somnath & Jagat Mandir Zone Surveillance • Real-Time AI Tracking
           </p>
         </div>
 
@@ -309,7 +309,8 @@ export const CommandCenterPage: React.FC = () => {
           .command-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 640px) {
-          .kpi-grid { grid-template-columns: 1fr !important; }
+          .kpi-grid { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+          .command-grid { gap: 1rem !important; }
         }
       `}</style>
     </div>
