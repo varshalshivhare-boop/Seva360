@@ -1,7 +1,7 @@
 services:
   # Backend Express Node.js Service
   - type: web
-    name: darshan360-backend
+    name: Seva360-backend
     env: node
     rootDir: Backend
     buildCommand: npm install
