@@ -83,7 +83,7 @@ export const DevoteeLayout: React.FC<{ children: React.ReactNode }> = ({ childre
                     lineHeight: 1
                   }}
                 >
-                  DARSHAN360
+                  SEVA360
                 </span>
                 <span
                   style={{
@@ -375,7 +375,7 @@ export const DevoteeLayout: React.FC<{ children: React.ReactNode }> = ({ childre
         >
           <div>
             <div style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 700, color: 'var(--hm-primary)', fontSize: '1rem', marginBottom: '0.25rem' }}>
-              DARSHAN360 / SEVA360
+              SEVA360
             </div>
             <p style={{ fontSize: '0.82rem', color: 'var(--hm-on-surface-variant)' }}>
               Next-Generation Temple Pilgrimage & Intelligent Crowd Management System.

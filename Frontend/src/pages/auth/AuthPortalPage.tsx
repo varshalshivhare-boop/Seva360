@@ -48,7 +48,7 @@ export const AuthPortalPage: React.FC = () => {
             </div>
             <div>
               <span style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 800, fontSize: '1.2rem', display: 'block', lineHeight: 1 }}>
-                DARSHAN360
+                SEVA360
               </span>
               <span style={{ fontSize: '0.65rem', color: 'var(--hm-secondary)', letterSpacing: '0.1em', fontWeight: 600, textTransform: 'uppercase' }}>
                 Seva360 Platform

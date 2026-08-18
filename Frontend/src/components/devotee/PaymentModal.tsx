@@ -165,14 +165,14 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                   <div className="w-16 h-16 bg-white p-2 rounded-lg flex items-center justify-center">
                     {/* Simulated QR Code */}
                     <img
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=darshan360@upi%26pn=Darshan360%26am=${amount}%26cu=INR`}
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=seva360@upi%26pn=Seva360%26am=${amount}%26cu=INR`}
                       alt="UPI QR"
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-slate-200">Scan & Pay with any UPI App</div>
-                    <div className="text-xs text-amber-400/80 font-mono mt-0.5">UPI ID: darshan360@upi</div>
+                    <div className="text-xs text-amber-400/80 font-mono mt-0.5">UPI ID: seva360@upi</div>
                     <div className="flex gap-2 mt-2">
                       <span className="px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-300 font-medium">GPay</span>
                       <span className="px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-300 font-medium">PhonePe</span>
