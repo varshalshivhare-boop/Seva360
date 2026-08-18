@@ -1,0 +1,397 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Temple &amp; Seva Listing | Darshan360</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "inverse-on-surface": "#f3f0ea",
+                            "on-secondary-fixed": "#2e1500",
+                            "surface": "#fcf9f2",
+                            "outline": "#8e706c",
+                            "on-surface": "#1c1c18",
+                            "error": "#ba1a1a",
+                            "inverse-primary": "#ffb4a8",
+                            "on-tertiary": "#ffffff",
+                            "surface-tint": "#b22b1d",
+                            "on-secondary": "#ffffff",
+                            "on-tertiary-fixed": "#241a00",
+                            "on-error-container": "#93000a",
+                            "on-background": "#1c1c18",
+                            "on-tertiary-fixed-variant": "#574500",
+                            "surface-bright": "#fcf9f2",
+                            "outline-variant": "#e2bfb9",
+                            "on-primary": "#ffffff",
+                            "on-error": "#ffffff",
+                            "on-secondary-container": "#683700",
+                            "inverse-surface": "#31312c",
+                            "primary-container": "#800000",
+                            "primary-fixed-dim": "#ffb4a8",
+                            "surface-container-lowest": "#ffffff",
+                            "error-container": "#ffdad6",
+                            "surface-container-low": "#f6f3ec",
+                            "on-secondary-fixed-variant": "#6d3a00",
+                            "tertiary-fixed": "#ffe088",
+                            "secondary-fixed": "#ffdcc2",
+                            "surface-container": "#f0eee7",
+                            "primary-fixed": "#ffdad4",
+                            "secondary-fixed-dim": "#ffb77a",
+                            "tertiary": "#735c00",
+                            "on-primary-fixed": "#410000",
+                            "surface-variant": "#e5e2db",
+                            "surface-dim": "#dcdad3",
+                            "on-surface-variant": "#5a413d",
+                            "secondary-container": "#fe9832",
+                            "surface-container-high": "#ebe8e1",
+                            "on-primary-fixed-variant": "#8f0f07",
+                            "on-primary-container": "#ff8371",
+                            "background": "#fcf9f2",
+                            "surface-container-highest": "#e5e2db",
+                            "secondary": "#8f4e00",
+                            "primary": "#570000",
+                            "tertiary-container": "#cba72f",
+                            "on-tertiary-container": "#4e3d00",
+                            "tertiary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px",
+                            "card": "16px"
+                    },
+                    "spacing": {
+                            "margin-desktop": "40px",
+                            "gutter": "24px",
+                            "unit": "8px",
+                            "margin-mobile": "16px",
+                            "section-gap": "80px",
+                            "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                            "display-lg": [
+                                    "Montserrat"
+                            ],
+                            "kpi-value": [
+                                    "Montserrat"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ],
+                            "display-lg-mobile": [
+                                    "Montserrat"
+                            ],
+                            "headline-md": [
+                                    "Montserrat"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "label-caps": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "display-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "1.2",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "kpi-value": [
+                                    "36px",
+                                    {
+                                            "lineHeight": "1.1",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "1.6",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "display-lg-mobile": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "1.2",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "1.4",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "1.5",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "label-caps": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "1.2",
+                                            "letterSpacing": "0.08em",
+                                            "fontWeight": "600"
+                                    }
+                            ]
+                    }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0 4px 20px -2px rgba(87, 0, 0, 0.05);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 8px 30px -4px rgba(87, 0, 0, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50 w-full transition-transform duration-300 transform translate-y-0" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full h-20 max-w-container-max-width mx-auto">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary">
+                Darshan360
+            </div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex space-x-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Seva</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Booking</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Dashboard</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden md:flex relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Search temples..." type="text">
+</div>
+<button class="flex items-center text-primary font-medium hover:bg-surface-container-low px-4 py-2 rounded-full transition-colors">
+<span class="material-symbols-outlined mr-2">account_circle</span>
+<span class="hidden md:inline">Profile</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-gutter mb-section-gap">
+<!-- Hero / Search Section -->
+<section class="relative rounded-card overflow-hidden h-[400px] mb-section-gap flex items-center justify-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A sweeping wide-angle shot of a grand, ancient Indian temple complex at dawn, bathed in soft, golden warm light. The architecture is intricate and majestic, conveying a profound sense of heritage and spirituality. The image adheres to a high-end, structured serenity aesthetic, with deep maroon and soft ivory tones prominent in the sunrise sky and stone textures. Minimalist framing, deeply atmospheric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs-LOvyj31o7OT1xftyhhaF98Yv9uMQmK8X-jfAi9nWx7dXQWfJlV4wrAmtyJrY3bPg3e2rc934Cxj7DQoNVUr6kY_RzAHX95tDzK5sPojBJf55O45RVJlX9Kkq5bOrLnBn1W-TGv_8OM4n--k-7xRILB5YrQWPsfys4Rg4E5J19OmieqVeTJ089_JIPTrnXByN5n77WiHb0v5kMbQOk2Ec4ppRxhj5ZSIKlEHpNSK7GJfvdOsxGVeiw">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-90"></div>
+<div class="absolute inset-0 bg-black opacity-20"></div>
+</div>
+<div class="relative z-10 w-full max-w-3xl px-4 text-center glass-card p-8 rounded-card ambient-shadow mx-4">
+<h1 class="font-headline-md text-headline-md text-primary mb-4">Discover Divine Destinations</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Book authentic sevas and darshans at India's most revered temples.</p>
+<div class="flex flex-col md:flex-row gap-4 w-full">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 transform -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary h-[56px] text-body-md transition-all shadow-sm" placeholder="Search by temple, deity, or city..." type="text">
+</div>
+<button class="bg-primary text-on-primary font-bold px-8 py-4 rounded-lg h-[56px] hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center justify-center whitespace-nowrap">
+                        Search Now
+                    </button>
+</div>
+<div class="flex flex-wrap justify-center gap-3 mt-6">
+<span class="text-sm text-on-surface-variant mr-2 flex items-center">Popular:</span>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-sm font-medium hover:border-primary hover:text-primary transition-colors bg-surface">Kashi Vishwanath</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-sm font-medium hover:border-primary hover:text-primary transition-colors bg-surface">Mahakaleshwar</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant text-sm font-medium hover:border-primary hover:text-primary transition-colors bg-surface">Tirupati</button>
+</div>
+</div>
+</section>
+<!-- Filters Bar -->
+<div class="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-outline-variant gap-4">
+<div class="flex overflow-x-auto w-full md:w-auto pb-2 md:pb-0 hide-scrollbar space-x-2">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-medium text-sm whitespace-nowrap border border-primary-container">All Temples</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Jyotirlingas</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Shakti Peethas</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Special Sevas</button>
+</div>
+<div class="flex items-center space-x-4 w-full md:w-auto justify-end">
+<button class="flex items-center space-x-2 text-on-surface-variant hover:text-primary transition-colors px-3 py-2 border border-transparent hover:border-outline-variant rounded-md">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span class="text-sm font-medium">Filters</span>
+</button>
+<div class="h-6 w-px bg-outline-variant hidden md:block"></div>
+<div class="relative hidden md:block">
+<select class="appearance-none bg-transparent pr-8 py-2 text-sm font-medium text-on-surface-variant focus:outline-none focus:text-primary cursor-pointer border-none">
+<option>Sort by: Popularity</option>
+<option>Distance</option>
+<option>A-Z</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Listing -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Card (Large) -->
+<article class="md:col-span-8 bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col group border border-surface-container-high">
+<div class="relative h-64 md:h-80 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed, professional architectural photograph of the Kashi Vishwanath temple complex in Varanasi. The golden spire shines against a clear, deep blue sky. The scene is immaculate, employing a modern, high-contrast aesthetic with deep maroon shadow undertones and brilliant gold highlights. The atmosphere is one of serene dignity and premium heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBmQ80ZO7Kf0e4Yl2bpToXgykmK3TjEqXRO19L7aHgj94F3Dn0aFwJrzL6oInzAxTD1qKy7k3bDOSNeVSrV-GU2hhFDTTjEFQyvETmzgDl8VNycOuaB1kW6LIZqjDvdR1hbQNptaqIMA1lgduldX2-opV0LXQbqepHK9DhgTy17eef9-66W_GqLx--7p0eFw6gxQkAoe0K9cUlXRapI7Za_mBCHB-2qSRhNKOiYU8FH3IriihBmAV3XQ">
+<div class="absolute top-4 left-4 bg-surface text-primary font-label-caps text-label-caps px-3 py-1 rounded-full shadow-sm flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" style="font-variation-settings: 'FILL' 1;">star</span> Featured
+                    </div>
+<div class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
+<span class="font-bold text-primary">Varanasi, UP</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Shri Kashi Vishwanath Temple</h2>
+<div class="flex items-center bg-surface-container px-2 py-1 rounded text-sm font-medium">
+<span class="material-symbols-outlined text-tertiary-container text-[16px] mr-1" style="font-variation-settings: 'FILL' 1;">star</span> 4.9
+                        </div>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6 line-clamp-2">One of the most famous Hindu temples dedicated to Lord Shiva, located in Varanasi. Book VIP Darshan and specialized sevas including Mangala Aarti and Rudrabhishek.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-xs text-on-surface-variant uppercase tracking-wider">Next Available</span>
+<span class="font-medium text-on-surface">Today, 4:00 PM</span>
+</div>
+<a href="{{DATA:SCREEN:SCREEN_5}}" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold hover:bg-on-primary-fixed-variant transition-colors shadow-sm inline-block">Book Seva</a>
+</div>
+</div>
+</article>
+<!-- Seva Spotlight Card -->
+<article class="md:col-span-4 bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-surface-container-high border-l-4 border-l-secondary-container">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up, highly professional studio-style photograph of traditional pooja items—a glowing brass oil lamp (diya), fresh marigold flowers, and sacred red vermillion on a polished wooden surface. The lighting is dramatic yet soft, highlighting the textures of the brass and the vibrant orange of the flowers against a deep, dark background. Minimalist, elegant, and reverent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbLPNGw2IhYH1q0i5lTg0birhlP72Ca1fJIzwe1zOAqNfxEIn_oG3QXv0KrdR_I1XWqWRCIy3Gz95yPNFkrMiAF_euYYkTcsI9QuYYKvgVpvHeZmklUL42L3x8JEV1kPx7a5dsmajH3lNNh9gwtdoKMwD0-DKJURxN79ttrcUfVQYlRmHWLDRBjqs20zH-TFjDotjytPaAbou-mBFhNg4WUD8O_y013iaLeNfggtbQLZqzp2jO8Az6-w">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="text-xs font-bold text-secondary-container uppercase tracking-wider mb-2">Special Seva</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Bhasma Aarti</h3>
+<p class="text-sm text-on-surface-variant mb-4">Mahakaleshwar Temple, Ujjain</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-low text-xs rounded border border-outline-variant">Early Morning</span>
+<span class="px-2 py-1 bg-surface-container-low text-xs rounded border border-outline-variant">2 Hours</span>
+</div>
+<div class="mt-auto">
+<a href="{{DATA:SCREEN:SCREEN_5}}" class="w-full border-2 border-primary text-primary px-4 py-2.5 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-colors inline-block text-center">Check Availability</a>
+</div>
+</div>
+</article>
+<!-- Standard Card 1 -->
+<article class="md:col-span-4 bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-surface-container-high">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A majestic, high-resolution architectural view of the Somnath Temple situated right on the coast. The Arabian Sea crashes gently against the retaining wall in the foreground. The temple is lit with a warm, golden glow against a twilight sky painted in deep indigos and soft maroons. The aesthetic is clean, majestic, and structurally imposing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAskNHaEcZFXby3TGf_ZSWCouiL0Xu1YY9k5xCw1D7CpnRZfD3SWpwyzqq7F862HPiqyleYBTTVNKQlNn_Vas-Bp2Mt5HhRJE0PQU8bINt35fI-5dfC2_VV3XFL7tWTs93l_EaWAbPWmwYHTimG8s27etBLqWiZZiO0Uhfd04wHCMyGtI8T6miUgx1gFczrHlbDYvOk5eABtlNgkkCfEYgxnhnMSMFzqT2Haby6FOyrJacfmC4kAkSctg">
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-[18px] text-on-surface">Somnath Temple</h3>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors text-[20px]">favorite_border</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">location_on</span> Gujarat
+                    </p>
+<div class="mt-auto pt-4 border-t border-surface-container-highest flex justify-between items-center">
+<span class="text-sm font-medium text-primary">From ₹500</span>
+<button class="text-primary font-bold text-sm hover:underline underline-offset-2">View Details</button>
+</div>
+</div>
+</article>
+<!-- Standard Card 2 -->
+<article class="md:col-span-4 bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-surface-container-high">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A pristine, wide-angle shot of the Kedarnath Temple nestled amidst towering snow-capped Himalayan peaks. The stone temple stands solid and ancient, illuminated by crisp, clear mountain sunlight. The color palette emphasizes cool whites and slate greys, contrasted with the deep maroon of pilgrims' garments in the distance. Serene, majestic, high-end photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxY5h0Xam0HrC0sxK0iRAWrSK5X0H7HriJxLVVmgdpMrlZ3JtkkPslm8qx4w15JM6syyO4xJRzs-G3PMD0byC5b7XdVEMJiT7cJGNsb_m0pwmAHjREuse-FvsXJal6odlLvqlDWgFHkQlRJW_lsE4Ys6zy23Vhi9NZzQYINYdfmJVv1iCZZ8u9ER5Q8M1EyHvMOiYuxZ2BnFIgnueRibqKfSBLAOiEGjWJhZ6UMgiSbsvPHBCnRdcEQA">
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-[18px] text-on-surface">Kedarnath Temple</h3>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors text-[20px]">favorite_border</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">location_on</span> Uttarakhand
+                    </p>
+<div class="mt-auto pt-4 border-t border-surface-container-highest flex justify-between items-center">
+<span class="text-sm font-medium text-primary">Registration Open</span>
+<button class="text-primary font-bold text-sm hover:underline underline-offset-2">View Details</button>
+</div>
+</div>
+</article>
+<!-- Standard Card 3 -->
+<article class="md:col-span-4 bg-surface rounded-card overflow-hidden ambient-shadow ambient-shadow-hover transition-all duration-300 flex flex-col border border-surface-container-high">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stunning, modern architectural shot of the Meenakshi Amman Temple gopuram (tower) in Madurai. The intricate, colorful sculptures on the tower are captured in crisp detail, but the overall color grading is sophisticated, muting overly bright colors to fit a premium, modern aesthetic with deep maroon and charcoal shadows. Clear blue sky background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBUntw7Q-AVtKKSEocM0WvEK05GXnu87N_QCTptJagk8birM7A-ogeLxwr-Qie8MSUjsdlB3wi1GK9XhlpYYYgUM3RmbW_BcAa6m8M8FkqMVMBJpiqxJGt3-VtzGxdBlSA7qlATjqXPRCnyrvyxwvvlnFREGVRX_hYOkA7Rw8CDKzxBmx95Y2WkaRdpomcOQwSPIIjmeJ3LSSI3DVakPg7tS7NR8WdmZkCSdIS5YW8XCW4MH6ZECPrJw">
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-[18px] text-on-surface">Meenakshi Amman</h3>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors text-[20px]">favorite_border</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">location_on</span> Madurai, TN
+                    </p>
+<div class="mt-auto pt-4 border-t border-surface-container-highest flex justify-between items-center">
+<span class="text-sm font-medium text-primary">From ₹250</span>
+<button class="text-primary font-bold text-sm hover:underline underline-offset-2">View Details</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-12">
+<button class="px-8 py-3 rounded-full border border-outline-variant text-on-surface font-medium hover:bg-surface-container-low hover:border-primary transition-all duration-200">
+                Load More Destinations
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface mt-auto w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max-width mx-auto">
+<a href="{{DATA:SCREEN:SCREEN_2}}" class="font-display-lg text-display-lg-mobile md:text-display-lg text-inverse-on-surface mb-6 md:mb-0 hover:opacity-80 transition-opacity">Darshan360</a>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0"><a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Emergency Help</a></div>
+<div class="font-label-caps text-label-caps text-inverse-on-surface opacity-60 text-center md:text-right">
+                © 2024 Darshan360 Pilgrimage Management. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for navbar
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('top-nav');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Downscroll
+                navbar.classList.add('-translate-y-full');
+            } else {
+                // Upscroll
+                navbar.classList.remove('-translate-y-full');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    </script>
+
+
+</body></html>

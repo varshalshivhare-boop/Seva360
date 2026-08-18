@@ -1,0 +1,305 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Darshan360 - Manage your spiritual journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#f3f0ea",
+                      "on-secondary-fixed": "#2e1500",
+                      "surface": "#fcf9f2",
+                      "outline": "#8e706c",
+                      "on-surface": "#1c1c18",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb4a8",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#b22b1d",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1c18",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-bright": "#fcf9f2",
+                      "outline-variant": "#e2bfb9",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#683700",
+                      "inverse-surface": "#31312c",
+                      "primary-container": "#800000",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f6f3ec",
+                      "on-secondary-fixed-variant": "#6d3a00",
+                      "tertiary-fixed": "#ffe088",
+                      "secondary-fixed": "#ffdcc2",
+                      "surface-container": "#f0eee7",
+                      "primary-fixed": "#ffdad4",
+                      "secondary-fixed-dim": "#ffb77a",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410000",
+                      "surface-variant": "#e5e2db",
+                      "surface-dim": "#dcdad3",
+                      "on-surface-variant": "#5a413d",
+                      "secondary-container": "#fe9832",
+                      "surface-container-high": "#ebe8e1",
+                      "on-primary-fixed-variant": "#8f0f07",
+                      "on-primary-container": "#ff8371",
+                      "background": "#fcf9f2",
+                      "surface-container-highest": "#e5e2db",
+                      "secondary": "#8f4e00",
+                      "primary": "#570000",
+                      "tertiary-container": "#cba72f",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "section-gap": "80px",
+                      "container-max-width": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "kpi-value": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "kpi-value": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 24px -4px rgba(87, 0, 0, 0.05);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 8px 32px -4px rgba(87, 0, 0, 0.1);
+        }
+      </style>
+</head>
+<body class="antialiased font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm transition-transform duration-300" id="main-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full h-20 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary" href="#">Darshan360</a>
+<nav class="hidden md:flex items-center gap-8"><a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="{{DATA:SCREEN:SCREEN_2}}">Home</a><a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 scale-95 transition-transform" href="{{DATA:SCREEN:SCREEN_9}}">Seva</a><a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 scale-95 transition-transform" href="{{DATA:SCREEN:SCREEN_5}}">Booking</a><a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 scale-95 transition-transform" href="{{DATA:SCREEN:SCREEN_4}}">Dashboard</a></nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<a class="font-body-md text-body-md text-on-primary bg-primary px-6 py-2 rounded-lg font-bold hover:bg-on-primary-fixed-variant transition-colors" href="{{DATA:SCREEN:SCREEN_12}}">Profile</a>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40" data-alt="A majestic Indian temple complex at dawn, bathed in soft, warm golden light. The architecture is ancient and intricate, rendered in deep maroons and warm ivory tones. The scene is serene, with a slight mist in the air, emphasizing a modern yet deeply heritage-focused aesthetic. High resolution, architectural photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpNVpZ7YyyyD4EnyTK2bcmN3cGbNtsrOvQBBp2yxPpo08B-QtebT_ies7i2ppV_JBnisHGrNQacWWJWNXd_Wffl2RRSp182V5kJ1q1zdC1b5Ek5tdJ5khg3FQF3CvBqj3-iVM_40QE4np1BXelh6L-RyzH_lTiYW0uuTliY0Aa6jMCBGqE9ajPScm8UQC7IQpk6zmW2b6qCuJPCGhW6wE5I0MtQGafRJT_6atLq2pv6IpV_b-FPc7JcA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mt-16">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Premium Pilgrimage Experience</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background max-w-3xl leading-tight">
+                    Manage your spiritual journey with profound serenity.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                    Experience structured serenity. Darshan360 seamlessly integrates traditional heritage with modern precision for a flawless pilgrimage.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<a href="{{DATA:SCREEN:SCREEN_9}}" class="bg-secondary-container text-on-secondary-container font-body-lg text-body-lg px-8 py-3 rounded-lg font-bold shadow-sm hover:bg-secondary-fixed transition-colors inline-flex items-center justify-center">Explore Temples</a>
+<button class="border border-outline bg-transparent text-primary font-body-lg text-body-lg px-8 py-3 rounded-lg font-bold hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+                        View Guided Tour
+                    </button>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">Architected for Peace of Mind</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Our platform ensures your devotion remains uninterrupted by logistical friction.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1: Large -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 ambient-shadow ambient-shadow-hover transition-shadow flex flex-col justify-between overflow-hidden relative group" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'">
+<div class="relative z-10 max-w-md">
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary-container text-on-primary-container mb-6">
+<span class="material-symbols-outlined">schedule</span>
+</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Virtual Queues</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Minimize wait times. Reserve your dedicated slot and approach the sanctum at precisely the right moment, avoiding physical congestion.
+                        </p>
+</div>
+<div class="mt-8 relative h-48 rounded-lg overflow-hidden border border-outline-variant/30">
+<div class="bg-cover bg-top w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A clean, minimalist UI dashboard interface showing a digital queue system. The design uses warm ivory and maroon tones, displaying a clear timeline and elegant typography. Professional, high-end digital design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuDYkRH_BPcrSbhzaS_0vhPXCSdD1Nc67nrw9W7o94FV5UCJHcNimd7TdwCNyeuJnW__Sa-TOIbz91avE9LyvRLJv05ZXIt4fHPolESOCIIm66daQuuC5r04iKeuY-iUapVqZurEQVnh4N0o6f2Qqh68iT3KL3WhEwfDkEfVNS6S4wajUNmIPV-loqr1SaIInDT553P7YQ1BDSCLtXbIfXriagjOid4k_yA7eIESl2DXy6qgVQMf_5gA')"></div>
+</div>
+</div>
+<!-- Feature 2: Small -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow ambient-shadow-hover transition-shadow flex flex-col justify-start">
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary-fixed text-on-secondary-fixed mb-6">
+<span class="material-symbols-outlined">event_available</span>
+</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Smart Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Intelligently schedule your Darshan, Seva, and accommodations in one unified itinerary.
+                    </p>
+<a class="mt-auto font-label-caps text-label-caps text-primary hover:text-on-primary-fixed-variant flex items-center gap-1 uppercase tracking-wider" href="{{DATA:SCREEN:SCREEN_5}}">
+                        Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Feature 3: Small -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow ambient-shadow-hover transition-shadow flex flex-col justify-start border-l-4 border-error">
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-error-container text-on-error-container mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Emergency Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Immediate access to medical assistance, security, and guidance personnel throughout the complex.
+                    </p>
+<a href="{{DATA:SCREEN:SCREEN_8}}" class="mt-auto border border-outline-variant text-on-surface px-4 py-2 rounded-lg hover:bg-surface-container transition-colors w-fit font-label-caps text-label-caps inline-block">View Protocols</a>
+</div>
+<!-- Feature 4: Large -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 ambient-shadow ambient-shadow-hover transition-shadow flex flex-col md:flex-row gap-8 items-center overflow-hidden" onclick="window.location.href='{{DATA:SCREEN:SCREEN_9}}'">
+<div class="flex-1">
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed mb-6">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Seamless Seva Contributions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Participate in temple rituals and community service with complete transparency. Track your contributions and receive digital blessings instantly.
+                        </p>
+</div>
+<div class="w-full md:w-1/3 h-48 rounded-lg overflow-hidden">
+<div class="bg-cover bg-center w-full h-full" data-alt="A close up, abstract view of traditional Indian brass lamps (diyas) lit warmly in a clean, modern setting. The composition focuses on elegant geometry and soft, glowing light against a dark maroon background. Premium, serene photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbzZ46-uOk81LL2oX8cJDssZpsGxG39mk7aFqIQjN7mJxG76djmNVEDm4JkUJ3ys_r4jSalvSC-4VPOP5Q2xA8jceGdqPCbCZD4_YtKrGfJkITFSSPZjcGakV2ITGmT-d5lB39pI8gD8Rbze5mjr9TlqsXxhj4p-25DREMhtKlnNlAcgioKCcX9lTbPv4dNGuHeBJfv65R25nIKB5njN8oVX6Tl1P2_xXwjovY2hTEHKv-EUkrMe6C5g')"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max-width mx-auto">
+<div class="font-display-lg text-display-lg text-inverse-on-surface mb-6 md:mb-0">
+                Darshan360
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Help</a>
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Emergency Contacts</a>
+</nav>
+<div class="font-label-caps text-label-caps text-inverse-on-surface opacity-60 text-center md:text-right">
+                © 2024 Darshan360 Pilgrimage Management. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple nav scroll effect
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Forgot Password - Darshan360</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#f3f0ea",
+                      "on-secondary-fixed": "#2e1500",
+                      "surface": "#fcf9f2",
+                      "outline": "#8e706c",
+                      "on-surface": "#1c1c18",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb4a8",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#b22b1d",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1c18",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-bright": "#fcf9f2",
+                      "outline-variant": "#e2bfb9",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#683700",
+                      "inverse-surface": "#31312c",
+                      "primary-container": "#800000",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f6f3ec",
+                      "on-secondary-fixed-variant": "#6d3a00",
+                      "tertiary-fixed": "#ffe088",
+                      "secondary-fixed": "#ffdcc2",
+                      "surface-container": "#f0eee7",
+                      "primary-fixed": "#ffdad4",
+                      "secondary-fixed-dim": "#ffb77a",
+                      "tertiary": "#735c00",
+                      "on-primary-fixed": "#410000",
+                      "surface-variant": "#e5e2db",
+                      "surface-dim": "#dcdad3",
+                      "on-surface-variant": "#5a413d",
+                      "secondary-container": "#fe9832",
+                      "surface-container-high": "#ebe8e1",
+                      "on-primary-fixed-variant": "#8f0f07",
+                      "on-primary-container": "#ff8371",
+                      "background": "#fcf9f2",
+                      "surface-container-highest": "#e5e2db",
+                      "secondary": "#8f4e00",
+                      "primary": "#570000",
+                      "tertiary-container": "#cba72f",
+                      "on-tertiary-container": "#4e3d00",
+                      "tertiary-fixed-dim": "#e9c349"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "16px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "section-gap": "80px",
+                      "container-max-width": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "kpi-value": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "kpi-value": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Transactional Intent - Suppressed Main Nav, Kept Brand Anchor) -->
+<header class="bg-surface docked full-width top-0 shadow-sm flex justify-center items-center py-6 w-full z-50">
+<a aria-label="Darshan360 Home" class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary flex items-center gap-2" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined" data-icon="temple_hindu" style="font-variation-settings: 'FILL' 1; font-size: 32px;">temple_hindu</span>
+            Darshan360
+        </a>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop py-section-gap relative overflow-hidden">
+<!-- Decorative Ambient Background Elements -->
+<div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-primary opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[30rem] h-[30rem] bg-secondary-container opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Auth Card Container -->
+<div class="w-full max-w-md bg-white rounded-[16px] shadow-[0_4px_24px_rgba(87,0,0,0.05)] border border-outline-variant/30 p-8 md:p-12 relative z-10">
+<div class="text-center mb-8">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="lock_reset" style="font-size: 48px; font-variation-settings: 'FILL' 0;">lock_reset</span>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Forgot Password?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Enter the email address associated with your account, and we'll send you a link to reset your password.
+                </p>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<!-- Email Field -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant opacity-70" data-icon="mail">mail</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-on-surface/10 rounded-lg bg-surface-bright text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors min-h-[48px]" id="email" name="email" placeholder="you@example.com" required="" type="email">
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-caps text-label-caps text-on-primary bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 active:scale-95 min-h-[48px]" type="submit" onclick="window.location.href='{{DATA:SCREEN:SCREEN_12}}'; return false;">
+                    Send Reset Link
+                </button>
+</form>
+<!-- Back to Login Link -->
+<div class="mt-8 text-center">
+<a class="inline-flex items-center gap-2 font-body-md text-body-md text-primary hover:text-primary-fixed-dim transition-colors font-medium" href="{{DATA:SCREEN:SCREEN_12}}">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-size: 20px;">arrow_back</span>
+                    Return to Login
+                </a>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed Navigation Links, Simplified for Transactional Page) -->
+<footer class="bg-inverse-surface py-gutter px-margin-desktop w-full flex flex-col items-center justify-center border-t-0">
+<p class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 text-center">
+            © 2024 Darshan360 Pilgrimage Management. All rights reserved.
+         </p>
+</footer>
+
+
+</body></html>

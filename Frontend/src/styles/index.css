@@ -1,0 +1,636 @@
+/* ==========================================================================
+   SEVA360 CINEMATIC SCROLL EXPERIENCE — DESIGN SYSTEM & TOKENS
+   Aesthetic: Ancient Temple Sanctum, Warm Sandstone, Deep Sacred Shadows
+   ========================================================================== */
+
+:root {
+  /* Core Colors */
+  --color-bg: #070709;
+  --color-surface: #101014;
+  --color-gold: #e5c378;
+  --color-gold-light: #f5dfa6;
+  --color-gold-deep: #b88d3b;
+  --color-sandstone: #d4c5b3;
+  --color-sandstone-muted: #8c827a;
+  --color-sandstone-dark: #2a2622;
+  --color-text-primary: #fbf8f2;
+  --color-text-secondary: #c2baa8;
+  --color-text-muted: #7d786d;
+  
+  /* Fonts */
+  --font-serif-display: 'Cinzel', serif;
+  --font-serif-body: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Transitions */
+  --transition-subtle: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  width: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* Base Scroll Track & Fixed Viewport */
+.cinematic-container {
+  position: relative;
+  width: 100%;
+  /* 600vh provides a comfortable scrubbing length for 480 frames */
+  height: 600vh;
+  background-color: var(--color-bg);
+}
+
+.fixed-viewport {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: var(--color-bg);
+}
+
+.cinematic-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+}
+
+/* Subtle Vignette & Sanctum Atmosphere */
+.cinematic-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(7, 7, 9, 0.4) 75%,
+    rgba(7, 7, 9, 0.8) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.cinematic-subtle-glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(229, 195, 120, 0.04) 0%,
+    transparent 65%
+  );
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   INTRO OVERLAY (Visible at the very beginning)
+   ========================================================================== */
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.intro-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12vh;
+  text-align: center;
+}
+
+.intro-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.intro-title {
+  font-family: var(--font-serif-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-text-primary);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+.intro-subtitle {
+  font-family: var(--font-serif-body);
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--color-sandstone);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+  max-width: 600px;
+}
+
+.intro-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-sandstone-muted);
+}
+
+.scroll-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-sandstone);
+  opacity: 0.8;
+}
+
+.scroll-line-container {
+  width: 1px;
+  height: 48px;
+  background: rgba(212, 197, 179, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-gold));
+  animation: scrollDown 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+/* ==========================================================================
+   MICRO-NARRATIVE OVERLAYS (During Journey)
+   ========================================================================== */
+
+.micro-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6rem;
+  pointer-events: none;
+  transition: opacity 0.4s ease-out;
+}
+
+.micro-text {
+  font-family: var(--font-serif-body);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-light);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95);
+  background: linear-gradient(180deg, rgba(7,7,9,0) 0%, rgba(7,7,9,0.7) 100%);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   FINAL DARSHAN & CALL TO ACTION (0.90 -> 1.00)
+   ========================================================================== */
+
+.final-cta-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3rem 2rem 5rem;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(7, 7, 9, 0.92) 0%,
+    rgba(7, 7, 9, 0.6) 30%,
+    rgba(7, 7, 9, 0) 65%
+  );
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.final-cta-overlay.active {
+  pointer-events: auto;
+}
+
+.cta-content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 680px;
+}
+
+.cta-brand-tag {
+  font-family: var(--font-serif-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+.cta-headline {
+  font-family: var(--font-serif-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.6rem;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+}
+
+.cta-tagline {
+  font-family: var(--font-serif-body);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--color-sandstone);
+  margin-bottom: 2.25rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cta-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-enter-seva {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.15rem 2.8rem;
+  background: rgba(18, 17, 19, 0.8);
+  color: var(--color-gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid rgba(229, 195, 120, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 15px rgba(229, 195, 120, 0.1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+}
+
+.btn-enter-seva:hover {
+  background: rgba(229, 195, 120, 0.15);
+  border-color: var(--color-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(229, 195, 120, 0.25);
+}
+
+.btn-enter-seva:active {
+  transform: translateY(0);
+}
+
+.btn-icon-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-enter-seva:hover .btn-icon-arrow {
+  transform: translateX(4px);
+}
+
+.cta-secondary-note {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--color-sandstone-muted);
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   MINIMAL LOADING EXPERIENCE
+   ========================================================================== */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-bg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.loading-symbol {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+  color: var(--color-gold);
+  opacity: 0.9;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.04); filter: drop-shadow(0 0 12px rgba(229,195,120,0.5)); }
+}
+
+.loading-brand {
+  font-family: var(--font-serif-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.loading-message {
+  font-family: var(--font-serif-body);
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--color-sandstone);
+  margin-bottom: 2rem;
+}
+
+.loading-bar-track {
+  width: 240px;
+  height: 2px;
+  background: rgba(212, 197, 179, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.loading-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold-deep), var(--color-gold-light));
+  transition: width 0.2s ease-out;
+}
+
+.loading-percentage {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-sandstone-muted);
+}
+
+/* ==========================================================================
+   SEVA360 APPLICATION DESTINATION (Placeholder route /app)
+   ========================================================================== */
+
+.app-destination-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: radial-gradient(circle at 50% 20%, #17151c 0%, #070709 100%);
+  color: var(--color-text-primary);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.app-destination-card {
+  max-width: 640px;
+  width: 100%;
+  background: rgba(18, 17, 21, 0.85);
+  border: 1px solid rgba(229, 195, 120, 0.25);
+  border-radius: 6px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 195, 120, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(229, 195, 120, 0.1);
+  border: 1px solid rgba(229, 195, 120, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-serif-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.app-title {
+  font-family: var(--font-serif-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.app-desc {
+  font-family: var(--font-serif-body);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-sandstone);
+  margin-bottom: 2rem;
+}
+
+.app-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.feature-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.feature-pill h4 {
+  font-family: var(--font-serif-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: 0.25rem;
+}
+
+.feature-pill p {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.btn-back-landing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  background: transparent;
+  color: var(--color-sandstone);
+  border: 1px solid rgba(212, 197, 179, 0.3);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-radius: 2px;
+}
+
+.btn-back-landing:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: var(--color-sandstone);
+}
+
+/* ==========================================================================
+   AUDIO TOGGLE & HELPER BADGES
+   ========================================================================== */
+
+.ambient-controls {
+  position: fixed;
+  top: 1.75rem;
+  right: 1.75rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-ambient {
+  background: rgba(18, 17, 21, 0.6);
+  border: 1px solid rgba(229, 195, 120, 0.25);
+  color: var(--color-sandstone);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-fast);
+}
+
+.btn-ambient:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  background: rgba(229, 195, 120, 0.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .intro-brand {
+    margin-top: 10vh;
+  }
+  
+  .app-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-overlay {
+    padding: 2rem 1.25rem;
+  }
+
+  .final-cta-overlay {
+    padding: 2rem 1.25rem 3.5rem;
+  }
+
+  .btn-enter-seva {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem 1.5rem;
+  }
+}

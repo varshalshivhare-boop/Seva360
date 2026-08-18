@@ -1,0 +1,338 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Book Darshan - Darshan360</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f3f0ea",
+                        "on-secondary-fixed": "#2e1500",
+                        "surface": "#fcf9f2",
+                        "outline": "#8e706c",
+                        "on-surface": "#1c1c18",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb4a8",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#b22b1d",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1c1c18",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-bright": "#fcf9f2",
+                        "outline-variant": "#e2bfb9",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#683700",
+                        "inverse-surface": "#31312c",
+                        "primary-container": "#800000",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f6f3ec",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#ffdcc2",
+                        "surface-container": "#f0eee7",
+                        "primary-fixed": "#ffdad4",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "tertiary": "#735c00",
+                        "on-primary-fixed": "#410000",
+                        "surface-variant": "#e5e2db",
+                        "surface-dim": "#dcdad3",
+                        "on-surface-variant": "#5a413d",
+                        "secondary-container": "#fe9832",
+                        "surface-container-high": "#ebe8e1",
+                        "on-primary-fixed-variant": "#8f0f07",
+                        "on-primary-container": "#ff8371",
+                        "background": "#fcf9f2",
+                        "surface-container-highest": "#e5e2db",
+                        "secondary": "#8f4e00",
+                        "primary": "#570000",
+                        "tertiary-container": "#cba72f",
+                        "on-tertiary-container": "#4e3d00",
+                        "tertiary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "section-gap": "80px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Montserrat"],
+                        "kpi-value": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "kpi-value": ["36px", { "lineHeight": "1.1", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 24px -4px rgba(87, 0, 0, 0.05);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 8px 32px -8px rgba(87, 0, 0, 0.08);
+        }
+
+        /* Subtle gold border for hover states */
+        .hover-gold:hover {
+            border-color: #cba72f;
+            box-shadow: 0 4px 12px rgba(203, 167, 47, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .transition-all-custom {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim shadow-sm sticky top-0 z-50 transition-all-custom">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full h-20 max-w-container-max-width mx-auto">
+<!-- Logo -->
+<div class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg font-bold text-primary dark:text-primary-fixed-dim"><a href="{{DATA:SCREEN:SCREEN_2}}" class="">Darshan360</a></div>
+<!-- Navigation Links (Hidden on Mobile) -->
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="{{DATA:SCREEN:SCREEN_2}}">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="{{DATA:SCREEN:SCREEN_9}}">Seva</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="{{DATA:SCREEN:SCREEN_5}}">Booking</a>
+<a class="font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="{{DATA:SCREEN:SCREEN_4}}">Dashboard</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center space-x-4">
+<a href="{{DATA:SCREEN:SCREEN_12}}" class="hidden md:flex items-center space-x-2 text-primary font-medium hover:text-primary-fixed-variant transition-colors"><span class="material-symbols-outlined">person</span><span class="">Profile</span></a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center pt-12 pb-section-gap px-margin-mobile md:px-margin-desktop w-full max-w-container-max-width mx-auto">
+<!-- Page Header -->
+<div class="w-full text-center mb-12">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Book Your Darshan</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Experience spiritual tranquility. Select your preferred date and time for a guided, peaceful visit.</p>
+</div>
+<!-- Bento Grid Layout for Booking -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Calendar & Slots (Span 8) -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Date Selection Card -->
+<div class="glass-panel rounded-xl p-6 md:p-8 ambient-shadow">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Select Date</h2>
+<div class="flex space-x-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="text-center font-bold text-on-surface-variant mb-4">October 2024</div>
+<!-- Simple Grid Calendar -->
+<div class="grid grid-cols-7 gap-2 text-center mb-2">
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Sun</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Mon</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Tue</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Wed</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Thu</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Fri</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Sat</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center">
+<!-- Empty slots -->
+<div class="h-12"></div>
+<div class="h-12"></div>
+<!-- Days -->
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface opacity-50 cursor-not-allowed">1</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface opacity-50 cursor-not-allowed">2</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface opacity-50 cursor-not-allowed">3</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">4</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors relative">
+                            5
+                            <span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-error rounded-full"></span>
+</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">6</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">7</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors relative">
+                            8
+                            <span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-secondary-container rounded-full"></span>
+</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">9</button>
+<button class="h-12 rounded-lg bg-primary text-on-primary font-bold shadow-md transform scale-105 transition-all">10</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors relative">
+                            11
+                            <span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-secondary-container rounded-full"></span>
+</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">12</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">13</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">14</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">15</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">16</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">17</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">18</button>
+<button class="h-12 rounded-lg border border-transparent hover:border-outline-variant text-on-surface hover:bg-surface-variant transition-colors">19</button>
+</div>
+<!-- Legend -->
+<div class="mt-6 flex justify-center space-x-6">
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Filling Fast</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Fully Booked</span>
+</div>
+</div>
+</div>
+<!-- Time Slot Card -->
+<div class="glass-panel rounded-xl p-6 md:p-8 ambient-shadow">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Select Time Slot</h2>
+<div class="mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3">MORNING (MANGALA)</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface opacity-50 cursor-not-allowed">05:00 AM</button>
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface relative overflow-hidden group">
+<span class="relative z-10">06:30 AM</span>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-secondary-container"></div>
+</button>
+<button class="py-3 px-4 rounded-lg border border-primary bg-primary-fixed text-on-primary-fixed font-bold shadow-sm transition-all-custom">08:00 AM</button>
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface">09:30 AM</button>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3">AFTERNOON (RAJBHOG)</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface">12:00 PM</button>
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface">01:30 PM</button>
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface">03:00 PM</button>
+<button class="py-3 px-4 rounded-lg border border-outline-variant text-on-surface hover-gold transition-all-custom bg-surface">04:30 PM</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Summary (Span 4) -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Details Card -->
+<div class="glass-panel rounded-xl p-6 md:p-8 ambient-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed-dim rounded-bl-full opacity-20 -z-10"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Devotee Details</h2>
+<div class="space-y-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">NUMBER OF PERSONS</label>
+<div class="flex items-center border border-outline-variant rounded-lg overflow-hidden bg-surface">
+<button class="px-4 py-3 text-on-surface hover:bg-surface-variant transition-colors">-</button>
+<input class="w-full text-center border-none bg-transparent focus:ring-0 font-body-md text-body-md text-on-surface" readonly="" type="text" value="2">
+<button class="px-4 py-3 text-on-surface hover:bg-surface-variant transition-colors">+</button>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">SPECIAL ASSISTANCE</label>
+<label class="flex items-center space-x-3 p-3 border border-outline-variant rounded-lg hover:bg-surface-variant cursor-pointer transition-colors bg-surface">
+<input class="form-checkbox text-primary rounded border-outline-variant focus:ring-primary h-5 w-5" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface flex-grow">Wheelchair required</span>
+<span class="material-symbols-outlined text-outline" data-icon="accessible">accessible</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant shadow-sm sticky top-24">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant pb-4">Booking Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">DATE</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Thursday, Oct 10, 2024</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">TIME</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">08:00 AM (Mangala)</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">DEVOTEES</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">2 Persons</p>
+</div>
+</div>
+</div>
+<a href="{{DATA:SCREEN:SCREEN_16}}" class="w-full py-4 bg-secondary-container text-on-secondary-container font-bold rounded-lg shadow-md hover:bg-secondary-fixed transition-colors flex items-center justify-center space-x-2"><span class="">Proceed to Confirmation</span><span class="material-symbols-outlined">arrow_forward</span></a>
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant mt-4 opacity-80">
+                        Please arrive 30 minutes before your scheduled slot.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest py-gutter px-margin-desktop w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max-width mx-auto">
+<div class="font-display-lg text-display-lg text-inverse-on-surface mb-4 md:mb-0 scale-75 origin-left">
+                Darshan360
+            </div>
+<div class="flex space-x-6 mb-4 md:mb-0">
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Help</a>
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-inverse-on-surface opacity-80 hover:opacity-100 transition-opacity underline-offset-4 hover:underline" href="{{DATA:SCREEN:SCREEN_8}}">Emergency Contacts</a>
+</div>
+<div class="font-label-caps text-label-caps text-inverse-on-surface opacity-60">
+                © 2024 Darshan360 Pilgrimage Management. All rights reserved.
+            </div>
+</div>
+</footer>
+
+
+</body></html>
