@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MaterialIcon } from '../../components/common/MaterialIcon';
 import { BookingSlotPicker, AVAILABLE_SLOTS, DarshanSlot } from '../../components/devotee/BookingSlotPicker';
+import { PaymentModal } from '../../components/devotee/PaymentModal';
 import { templeService } from '../../services/templeService';
 import { bookingService } from '../../services/bookingService';
 import { Temple } from '../../data/mockTemples';
@@ -18,6 +19,7 @@ export const BookDarshanPage: React.FC = () => {
   ]);
   const [priorityType, setPriorityType] = useState<'Standard' | 'Senior' | 'Accessible' | 'VIP'>('Standard');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,8 +57,12 @@ export const BookDarshanPage: React.FC = () => {
 
   const totalAmount = (selectedSlot?.pricePerPerson || 100) * devotees.length;
 
-  const handleConfirmBooking = async (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsPaymentOpen(true);
+  };
+
+  const handleFinalBookingAfterPayment = async () => {
     setIsSubmitting(true);
     try {
       await bookingService.createBooking({
@@ -86,7 +92,7 @@ export const BookDarshanPage: React.FC = () => {
         <p className="hm-subtext">Reserve your virtual queuing pass and sacred rituals.</p>
       </div>
 
-      <form onSubmit={handleConfirmBooking}>
+      <form onSubmit={handleFormSubmit}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.7fr 1fr', gap: '2.5rem', alignItems: 'flex-start' }} className="booking-layout-grid">
           {/* Left Column: Form Steps */}
           <div>
@@ -306,17 +312,25 @@ export const BookDarshanPage: React.FC = () => {
                 disabled={isSubmitting}
                 style={{ width: '100%', padding: '0.9rem', fontSize: '1rem' }}
               >
-                <span>{isSubmitting ? 'Generating E-Pass...' : 'Confirm & Generate E-Pass'}</span>
-                <MaterialIcon name="qr_code_scanner" size={20} />
+                <span>{isSubmitting ? 'Processing Payment...' : `Proceed to Pay (₹${totalAmount})`}</span>
+                <MaterialIcon name="payments" size={20} />
               </button>
 
               <div style={{ marginTop: '1rem', textAlign: 'center', fontSize: '0.75rem', color: 'var(--hm-on-surface-variant)' }}>
-                Instant QR Code pass with SMS and WhatsApp notification.
+                Secure UPI, Credit Card & Net Banking checkout.
               </div>
             </div>
           </div>
         </div>
       </form>
+
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={() => setIsPaymentOpen(false)}
+        defaultAmount={totalAmount}
+        defaultSeva={selectedSlot?.categoryLabel || 'VIP Darshan Pass'}
+        onPaymentSuccess={handleFinalBookingAfterPayment}
+      />
 
       <style>{`
         @media (max-width: 960px) {
