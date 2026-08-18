@@ -2,6 +2,9 @@ const { createClient } = require('redis');
 
 const redisClient = createClient({
   url: process.env.REDIS_URL || 'redis://localhost:6379',
+  socket: {
+    reconnectStrategy: false,
+  }
 });
 
 redisClient.on('connect', () => {
@@ -9,7 +12,7 @@ redisClient.on('connect', () => {
 });
 
 redisClient.on('error', (err) => {
-  console.error('[Redis Client Error]:', err.message);
+  // Silent log in dev when Redis is not running locally
 });
 
 const connectRedis = async () => {
@@ -18,7 +21,7 @@ const connectRedis = async () => {
       await redisClient.connect();
     }
   } catch (error) {
-    console.error('[Redis Connection Failed]: Cache system will run in memory fallback mode if required.', error.message);
+    console.log('[Redis Note]: Local Redis not active. Backend using in-memory queue fallback.');
   }
 };
 

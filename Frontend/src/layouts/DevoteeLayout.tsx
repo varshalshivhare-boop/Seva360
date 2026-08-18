@@ -3,11 +3,13 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { MaterialIcon } from '../components/common/MaterialIcon';
 import { useAuth } from '../context/AuthContext';
 import { ROUTES } from '../config/routes';
+import { PaymentModal } from '../components/devotee/PaymentModal';
 
 export const DevoteeLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, logout, switchRole } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [isPaymentModalOpen, setPaymentModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -134,6 +136,30 @@ export const DevoteeLayout: React.FC<{ children: React.ReactNode }> = ({ childre
 
           {/* Right Action Items */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            {/* Pay Seva / VIP Pass Quick Button */}
+            <button
+              type="button"
+              onClick={() => setPaymentModalOpen(true)}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.5rem 0.9rem',
+                backgroundColor: 'rgba(217, 119, 6, 0.15)',
+                border: '1px solid rgba(245, 158, 11, 0.4)',
+                borderRadius: '0.375rem',
+                color: '#f59e0b',
+                fontSize: '0.82rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(245, 158, 11, 0.2)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <MaterialIcon name="payments" size={18} />
+              <span>Pay & Seva</span>
+            </button>
+
             {/* Emergency SOS Quick Button */}
             <Link
               to={ROUTES.EMERGENCY}
@@ -377,6 +403,10 @@ export const DevoteeLayout: React.FC<{ children: React.ReactNode }> = ({ childre
           .hide-mobile { display: none !important; }
         }
       `}</style>
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+      />
     </div>
   );
 };
