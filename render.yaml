@@ -6,6 +6,7 @@ services:
     rootDir: Backend
     buildCommand: npm install
     startCommand: node server.js
+    healthCheckPath: /health
     plan: free
     envVars:
       - key: PORT
